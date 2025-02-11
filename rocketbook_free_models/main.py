@@ -1,21 +1,15 @@
 from pathlib import Path
-from PyPDF2 import PdfReader, PdfWriter
+import os
 
-input_path = "input.pdf"
-output_path = "output.pdf"
+# Paths setup
+home_path = Path.cwd()
+input_paths = home_path / 'sources/'
+output_path = home_path / 'prints/'
 
+output_path.mkdir(exist_ok=True)  # Ensure output directory exists
 
-
-reader = PdfReader(input_path)
-writer = PdfWriter()
-
-for page in reader.pages:
-    new_page = writer.add_blank_page(width=842, height=595)  # A4 em paisagem
-
-    new_page.merge_page(page, (0, 0))  # Copia a página original na esquerda
-    new_page.merge_page(page, (421, 0))  # Copia a página original na direita
-
-with open(output_path, "wb") as f:
-    writer.write(f)
-
-print(f"Arquivo salvo como {output_path}")
+for file_path in input_paths.glob('*'):
+    output_file_name = output_path / file_path.name
+    command = f'pdfjam {file_path} {file_path} {file_path} {file_path} --nup 2x1 --landscape --outfile {output_file_name}'
+    os.system(command)
+    print(f"✅ File saved in {output_file_name}!")
