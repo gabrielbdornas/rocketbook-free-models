@@ -49,7 +49,7 @@ Baixe e instale o [pdfjam](http://www.ctan.org/pkg/pdfjam) conforme as instruç�
 1. Clone este repositório em sua máquina local.
 2. Instale as dependências necessárias (por exemplo, `pdfjam`).
 3. Rode o comando `poetry run task prints` se não houver arquivos na pasta `prints` (pasta com arquivos unificados prontos para impressão).
-4. Imprima o modelo desejado na pasta `prints` (sugestão de impressão frente e verso).
+4. Imprima o modelo desejado na pasta `prints` (sugestão de impressão nos dois lados de uma única folha - inverter na borda horizontal).
 
 ## Contribuições
 
