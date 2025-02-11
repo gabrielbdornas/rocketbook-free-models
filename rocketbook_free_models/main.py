@@ -1,6 +1,9 @@
 from pathlib import Path
 import os
 
+# Rocketbook free source pages
+# https://getrocketbook.com/pages/rocketbook-for-free
+
 # Paths setup
 home_path = Path.cwd()
 input_paths = home_path / 'sources/'
