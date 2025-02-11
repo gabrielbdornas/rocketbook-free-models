@@ -14,6 +14,8 @@ dependencies = [
     "reportlab (>=4.3.0,<5.0.0)"
 ]
 
+[tool.taskipy.tasks]
+prints = { cmd = "poetry run python rocketbook_free_models/main.py", help = "Generate all print files" }
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
